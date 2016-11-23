@@ -36,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         final List<Comment> values = dataSource.getAllComments();
 
 
+
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
