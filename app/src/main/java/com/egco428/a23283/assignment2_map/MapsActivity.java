@@ -2,6 +2,7 @@ package com.egco428.a23283.assignment2_map;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -11,10 +12,11 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private double latitude , longtitude;
+    private String title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String position[] = getIntent().getExtras().getStringArray("position");
         latitude   = Double.parseDouble(position[0]);
         longtitude = Double.parseDouble(position[1]);
+        title = position[2];
+        getSupportActionBar().setTitle("\t\t\t\t\t\t\t\t"+title+"'s "+"Location");
+
 
     }
 
@@ -50,7 +55,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng someone = new LatLng(latitude, longtitude);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longtitude), 14));
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longtitude), 8));
         mMap.addMarker(new MarkerOptions().position(someone).title("Marker in Your place"));
 
 

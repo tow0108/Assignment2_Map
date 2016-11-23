@@ -85,7 +85,7 @@ public class SignupActivity extends AppCompatActivity implements SensorEventList
 
                 if ((La.isEmpty()) || (Long.isEmpty())||user.isEmpty()||pass.isEmpty()) {
                     Context context = getApplicationContext();
-                    CharSequence text = "Can't fill blank space";
+                    CharSequence text = "Fill in the blanks to complete the form.";
                     int duration = Toast.LENGTH_LONG;
                     Toast toast = Toast.makeText(context, text, duration);
                     toast.show();

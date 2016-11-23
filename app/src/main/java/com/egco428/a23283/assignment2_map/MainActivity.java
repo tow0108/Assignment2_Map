@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity {
                     String x="latP",y="longP";
                     String latitude = course.getLatitude();
                     String longtitude = course.getLongtitude();
-                    String inputValue[] = {latitude,longtitude};
+                    String username   = course.getUsername();
+                    String inputValue[] = {latitude,longtitude,username};
 
                     intent.putExtra(XYposition,inputValue);
 //                    dataSource.deleteComment(course);
