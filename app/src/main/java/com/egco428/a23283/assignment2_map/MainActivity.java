@@ -51,14 +51,12 @@ public class MainActivity extends AppCompatActivity {
                     final Comment course = values.get(position);
                     Intent intent = new Intent(MainActivity.this,MapsActivity.class);
                     String x="latP",y="longP";
-                    String latitude = course.getLatitude().toString();
-                    String longtitude = course.getLongtitude().toString();
+                    String latitude = course.getLatitude();
+                    String longtitude = course.getLongtitude();
                     String inputValue[] = {latitude,longtitude};
-                    System.out.println("Latitude "+inputValue[0]);
-                    System.out.println("Longtitude "+inputValue[1]);
 
                     intent.putExtra(XYposition,inputValue);
-                    dataSource.deleteComment(course);
+//                    dataSource.deleteComment(course);
                     startActivity(intent);
                 }
             }
@@ -103,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         Intent intent = new Intent(MainActivity.this,LoginActivity.class);
                         startActivity(intent);
-                        finish();
 
                     }
                 });
